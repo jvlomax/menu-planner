@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="recipe-list">
+    {%  for recipe in recipes %}
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/150x120" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.title }}</h5>
+                <a href="/recipe/{{ recipe.id }}" class="btn btn-primary">View Recipe</a>
+                <a href="#" class="btn btn-primary">Add to menu</a>
+            </div>
+        </div>
+
+    {% else %}
+        No recipes here
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core@4.0.1/main.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/list/main.min.css">
+{% endblock css %}
+{% block prejs %}
+    <script src="https://unpkg.com/@fullcalendar/core@4.0.1/main.min.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/list/main.min.js"></script>
+{% endblock %}
+{% block content %}
+
+<div id="calendar"></div>
+
+{% endblock %}
+
+{% block postjs %}
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'list' ]
+    });
+
+    calendar.render();
+  });
+
+
+</script>
+{% endblock %}

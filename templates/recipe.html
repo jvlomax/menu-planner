@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ recipe.title }}</h2>
+<ul class="list-group">
+{% for ingredient in recipe.ingredients %}
+    <li class="list-group-item">{{ ingredient.name | capitalize }}: {{ ingredient.amount }}</li>
+{% endfor %}
+
+{{ recipe.instructions }}
+{% endblock %}
